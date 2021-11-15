@@ -1,2 +1,0 @@
-(this.webpackJsonpfilip_install=this.webpackJsonpfilip_install||[]).push([[0],{10:function(t,n,e){"use strict";e.r(n);var i=e(1),c=e.n(i),r=e(3),s=e.n(r),a=(e(8),e(0));var l=function(){return Object(a.jsx)("div",{children:"Start page"})};s.a.render(Object(a.jsx)(c.a.StrictMode,{children:Object(a.jsx)(l,{})}),document.getElementById("root"))},8:function(t,n,e){}},[[10,1,2]]]);
-//# sourceMappingURL=main.822fdf2c.chunk.js.map
