@@ -1,9 +1,9 @@
 import React from "react";
-import { connect } from 'react-redux';
-import { createStructuredSelector } from "reselect";
+// import { connect } from 'react-redux';
+// import { createStructuredSelector } from "reselect";
 import PORTOFOLIO_DATA from "../../redux/portofolio/portofolio.data";
 
-import { selectPortofolio } from "../../redux/portofolio/portofolio.selectors";
+// import { selectPortofolio } from "../../redux/portofolio/portofolio.selectors";
 import PortofolioItem from "../portofolioItem/portofolioItem.component";
 
 import './portofolio.styles.scss';
