@@ -1,11 +1,11 @@
-import './App.css';
-import PortofolioPage from './pages/portofolioPage/portofolio-page.component';
+import "./App.css";
+import HomePage from "./pages/home/home";
 
 function App() {
   return (
-   <div>
-      <PortofolioPage/>
-   </div>
+    <div>
+      <HomePage />
+    </div>
   );
 }
 

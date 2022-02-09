@@ -6,29 +6,32 @@ import PORTOFOLIO_DATA from "../../redux/portofolio/portofolio.data";
 // import { selectPortofolio } from "../../redux/portofolio/portofolio.selectors";
 import PortofolioItem from "../portofolioItem/portofolioItem.component";
 
-import './portofolio.styles.scss';
+import "./portofolio.styles.scss";
 
 class Portofolio extends React.Component {
-    constructor() 
-    {
-        super();
-        this.state = {
-            products: PORTOFOLIO_DATA
-        }
-    }
-    render() 
-    {
-        //console.log(this.state.products);
-        return (
-            <div className='portofolio'>
-            {
-               this.state.products.map(({id, ...otherProps}) => (
-                   <PortofolioItem key={id}{...otherProps}/>
-               ))
-           }
-           </div>
-        )
-    }
+  constructor() {
+    super();
+    this.state = {
+      products: PORTOFOLIO_DATA,
+    };
+  }
+  render() {
+    return (
+      <section className="page-section bg-light" id="portfolio">
+        <div className="container">
+          <div className="text-center">
+            <h2 className="section-heading text-uppercase">Portfoliu</h2>
+            <h3 className="section-subheading text-muted">
+              Lorem ipsum dolor sit amet consectetur.
+            </h3>
+          </div>
+          {this.state.products.map(({ id, ...otherProps }) => (
+            <PortofolioItem key={id} {...otherProps} />
+          ))}
+        </div>
+      </section>
+    );
+  }
 }
 
 export default Portofolio;
