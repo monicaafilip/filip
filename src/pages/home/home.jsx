@@ -1,6 +1,6 @@
 import React from "react";
 
-import Navbar from "../../components/navbar/navbar.component";
+import MyNavbar from "../../components/mynavbar/mynavbar.component";
 import Header from "../../components/header/header.component";
 import Services from "../../components/services/services.component";
 import Portofolio from "../../components/portofolio/portofolio.component";
@@ -14,7 +14,7 @@ import "./home.scss";
 const HomePage = () => {
   return (
     <div id="page-top">
-      <Navbar />
+      <MyNavbar />
       <Header />
       <Services />
       <Portofolio />
