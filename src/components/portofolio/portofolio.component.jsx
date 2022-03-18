@@ -1,62 +1,38 @@
 import React from "react";
-// import { connect } from 'react-redux';
-// import { createStructuredSelector } from "reselect";
-import PORTOFOLIO_DATA from "../../redux/portofolio/portofolio.data";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-// import { selectPortofolio } from "../../redux/portofolio/portofolio.selectors";
+import { selectPortofolio } from "../../redux/portofolio/portofolio.selectors";
 import PortofolioItem from "../portofolioItem/portofolioItem.component";
 
 import "./portofolio.styles.scss";
 
-class Portofolio extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      products: PORTOFOLIO_DATA,
-    };
-  }
-  render() {
+const Portofolio = ({ products }) => {
+  if (products)
     return (
       <section className="page-section bg-light" id="portfolio">
         <div className="container">
           <div className="text-center">
-            <h2 className="section-heading text-uppercase">Portfoliu</h2>
-            <h3 className="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
+            <h2 className="section-heading text-uppercase">Portofoliu</h2>
           </div>
-          {this.state.products.map(({ id, ...otherProps }) => (
-            <PortofolioItem key={id} {...otherProps} />
-          ))}
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+          >
+            <Masonry>
+              {products?.map(({ id, ...otherProps }) => (
+                <PortofolioItem key={id} {...otherProps} />
+              ))}
+            </Masonry>
+          </ResponsiveMasonry>
         </div>
       </section>
     );
-  }
-}
+  else return <div>Portofolio page</div>;
+};
 
-export default Portofolio;
+const mapStateToProps = createStructuredSelector({
+  products: selectPortofolio,
+});
 
-// const Portofolio = ({ products }) => {
-//     if (products)
-//     return (
-//         <div className='portofolio'>
-//             {
-//                 products.map(({id, ...otherProps}) => (
-//                     <PortofolioItem key={id}{...otherProps}/>
-//                 ))
-//             }
-//         </div>
-//     )
-//     else
-//         return (
-//             <div>
-//                 Portofolio page
-//             </div>
-//         )
-// }
-
-// const mapStateToProps = createStructuredSelector({
-//     products: selectPortofolio
-// });
-
-// export default connect(mapStateToProps)(Portofolio);
+export default connect(mapStateToProps)(Portofolio);

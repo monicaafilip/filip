@@ -14,11 +14,11 @@ const Team = () => {
         <div className="row">
           <div className="col-lg-12">
             <div className="team-member">
-              <img
+              {/* <img
                 className="mx-auto rounded-circle"
                 src="assets/img/team/1.jpg"
                 alt="..."
-              />
+              /> */}
               <h4>Filip Ilie</h4>
               <p className="text-muted">Instalator principal</p>
               <a className="btn btn-dark btn-social mx-2" href="#!">
